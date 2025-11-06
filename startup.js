@@ -17,18 +17,10 @@ switch (process.platform) {
     command = `open -a "Google Chrome" "${url}"`;
     break;
   case 'linux':
-    const { existsSync } = require('fs');
-    if (existsSync('/usr/bin/chromium')) {
-      command = `chromium "${url}"`;
-    } else if (existsSync('/usr/bin/chromium-browser')) {
-      command = `chromium-browser "${url}"`;
-    } else if (existsSync('/usr/bin/google-chrome')) {
-      command = `google-chrome "${url}"`;
-    } else {
-      console.error('Gak nemu browser di sistem, install Chromium dulu bro.');
-      process.exit(1);
-    }
+    command = `/usr/bin/chromium --no-sandbox --no-errdialogs --disable-infobars --start-fullscreen "${url}"`;
     break;
+
+
 
   default:
     console.error('Platform tidak dikenal. Jalankan manual aja, bro.');
