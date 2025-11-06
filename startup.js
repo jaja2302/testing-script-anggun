@@ -17,7 +17,7 @@ switch (process.platform) {
     command = `open -a "Google Chrome" "${url}"`;
     break;
   case 'linux':
-    command = `/usr/bin/chromium --no-sandbox --no-errdialogs --disable-infobars --start-fullscreen "${url}"`;
+    command = `/usr/bin/chromium --no-errdialogs --disable-infobars --start-fullscreen "${url}"`;
     break;
 
 
