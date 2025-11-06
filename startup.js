@@ -2,7 +2,7 @@
 const { exec } = require('child_process');
 
 // URL yang mau dibuka
-const url = 'https://www.google.com';
+const url = '192.168.4.1';
 
 // Deteksi sistem operasi dan buka Chrome sesuai platform
 let command;
