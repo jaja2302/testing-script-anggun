@@ -16,9 +16,10 @@ switch (process.platform) {
     // macOS
     command = `open -a "Google Chrome" "${url}"`;
     break;
-  case 'linux':
-    command = `/usr/bin/chromium --no-sandbox --no-errdialogs --disable-infobars --start-fullscreen "${url}"`;
-    break;
+ case 'linux':
+  // Raspberry Pi (Linux)
+  command = 'DISPLAY=:0 XAUTHORITY=/home/pi/.Xauthority /usr/bin/chromium --no-sandbox --no-errdialogs --disable-infobars --start-fullscreen "http://192.168.4.1"';
+  break;
 
   default:
     console.error('Platform tidak dikenal. Jalankan manual aja, bro.');
